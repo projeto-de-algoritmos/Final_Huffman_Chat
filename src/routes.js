@@ -5,10 +5,21 @@ import ChatScreen from "./pages/ChatScreen";
 import Login from "./pages/Login";
 
 const Routes = createAppContainer(
-  createStackNavigator({
-    Login,
-    ChatScreen
-  })
+  createStackNavigator(
+    {
+      Login,
+      ChatScreen
+    },
+    {
+      headerLayoutPreset: "center",
+      defaultNavigationOptions: {
+        headerStyle: {
+          backgroundColor: "#7700ff"
+        },
+        headerTintColor: "#FFF"
+      }
+    }
+  )
 );
 
 export default Routes;
