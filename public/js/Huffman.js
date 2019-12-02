@@ -1,5 +1,3 @@
-const Heap = require("./Heap");
-
 class Huffman {
   encode(data) {
     let freq = {};
@@ -15,8 +13,7 @@ class Huffman {
       .map(e => tree.push([freq[e], e]));
 
     while (tree.length > 1) {
-      let first = tree.pop(),
-        second = tree.pop();
+      let [first, second] = [tree.pop(), tree.pop()];
       tree.push([first[0] + second[0], [first[1], second[1]]]);
     }
 
@@ -41,7 +38,7 @@ class Huffman {
         .map(e => e.charCodeAt(0) + "|" + dict[e])
         .join("-") + "/";
 
-    return header + result;
+    return { tree: header, coded: result, formattedTree: dict };
   }
 
   decode(string) {
@@ -56,8 +53,7 @@ class Huffman {
 
     let result = "";
     while (data.length) {
-      let i = 0,
-        cur = "";
+      let cur = "";
       while (data.length) {
         cur += data.shift();
 
@@ -71,5 +67,3 @@ class Huffman {
     return result;
   }
 }
-
-module.exports = Huffman;

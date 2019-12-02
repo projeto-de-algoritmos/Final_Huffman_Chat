@@ -9,7 +9,7 @@ class Heap {
   }
 
   swap(i, j) {
-    [items[i], items[j]] = [items[j], items[i]];
+    [this.items[i], this.items[j]] = [this.items[j], this.items[i]];
   }
 
   bubble(i) {
@@ -51,5 +51,3 @@ class Heap {
     return this.items.length;
   }
 }
-
-module.exports = Heap;
