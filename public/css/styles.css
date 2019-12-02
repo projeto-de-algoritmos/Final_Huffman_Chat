@@ -119,10 +119,8 @@ button:disabled {
   overflow-y: scroll;
 }
 
-/* Message Styles */
-
 .message {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .message__name {
@@ -135,12 +133,6 @@ button:disabled {
   color: #777;
   font-size: 14px;
 }
-
-.message a {
-  color: #0070cc;
-}
-
-/* Message Composition Styles */
 
 .compose {
   display: flex;
@@ -188,4 +180,17 @@ button:disabled {
   list-style-type: none;
   font-weight: 300;
   padding: 12px 24px 0 24px;
+}
+
+.huffman-info {
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.message__content {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
 }

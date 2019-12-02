@@ -36,6 +36,8 @@ socket.on("message", message => {
   const html = Mustache.render(messageTemplate, {
     username: message.username,
     message: message.text,
+    coded: message.coded,
+    formattedTree: JSON.stringify(message.formattedTree, null, 4),
     createdAt: moment(message.createdAt).format("h:mm a")
   });
 
@@ -59,11 +61,6 @@ $messageForm.addEventListener("submit", e => {
 
   const message = e.target.elements.message.value;
   let { tree, coded, formattedTree } = huffman.encode(message);
-
-  console.log(formattedTree);
-  let decodedMessage = huffman.decode(tree + coded);
-
-  console.log(decodedMessage);
 
   socket.emit("sendMessage", { message, coded, formattedTree }, error => {
     $messageFormButton.removeAttribute("disabled");

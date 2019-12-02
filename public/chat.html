@@ -32,7 +32,13 @@
               <span class="message__name">{{username}}</span>
               <span class="message__meta">{{createdAt}}</span>
           </p>
-          <p>{{message}}</p>
+          <div class="message__content">
+            <p>{{message}}</p>
+            <div class="huffman-info">
+              <p><b>Huffman Tree:</b> {{formattedTree}}</p>
+              <p><b>Coded Message:</b> {{coded}}</p>
+            </div>
+          </div>
       </div>
     </script>
 
